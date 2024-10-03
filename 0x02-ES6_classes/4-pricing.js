@@ -14,17 +14,17 @@ export default class Pricing {
     return this._currency;
   }
 
-  set amount(newAmount) {
-    this._amount = newAmount;
+  set amount(amount) {
+    this._amount = amount;
   }
 
-  set currency(newCurrency) {
-    this._currency = newCurrency;
+  set currency(currency) {
+    this._currency = currency;
   }
 
   displayFullPrice() {
     // prettier-ignore
-    return `${this._amount} ${new Currency( this._currency.code, this._currency.name).displayFullCurrency()}`;
+    return `${this._amount} ${new Currency(this._currency.code, this._currency.name).displayFullCurrency()}`;
   }
 
   static convertPrice(amount, conversionRate) {
