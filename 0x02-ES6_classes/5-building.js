@@ -3,7 +3,6 @@ export default class Building {
     if (this.constructor !== Building) {
       this.evacuationWarningMessage();
     }
-
     this._sqft = sqft;
   }
 
