@@ -1,12 +1,11 @@
 export default function cleanSet(set, startString) {
+  const arr = [];
   // prettier-ignore
   if (!startString || !startString.length || typeof startString !== 'string') return '';
 
-  let finalString = '';
-  set.forEach((element) => {
+  set.forEach((ele) => {
     // prettier-ignore
-    if (element && element.startsWith(startString)) finalString += `${element.slice(startString.length)}-`;
+    if (ele && ele.startsWith(startString)) arr.push(ele.slice(startString.length));
   });
-
-  return finalString.slice(0, finalString.length - 1);
+  return arr.join('-');
 }
