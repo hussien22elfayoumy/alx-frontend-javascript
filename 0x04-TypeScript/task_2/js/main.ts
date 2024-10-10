@@ -52,3 +52,17 @@ const createEmployee: CreateEmployeeInterface = function (salary) {
 console.log(createEmployee(200));
 console.log(createEmployee(1000));
 console.log(createEmployee('$500'));
+
+const isDirector = function (
+  employee: Director | Teacher
+): employee is Director {
+  return employee instanceof Director;
+};
+
+const executeWork = function (employee: Director | Teacher): void {
+  if (isDirector(employee)) console.log(employee.workDirectorTasks());
+  else console.log(employee.workTeacherTasks());
+};
+
+executeWork(createEmployee(200));
+executeWork(createEmployee(1000));
