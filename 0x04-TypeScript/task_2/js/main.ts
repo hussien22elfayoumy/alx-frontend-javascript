@@ -67,13 +67,13 @@ const executeWork = function (employee: Director | Teacher): void {
 executeWork(createEmployee(200));
 executeWork(createEmployee(1000));
 
-let Subjects: 'Math' | 'Hitsory';
+type Subjects = 'Math' | 'Hitory';
 
-const teachClass = function (todayClass: typeof Subjects): void {
+const teachClass = function (todayClass: Subjects): void {
   if (todayClass === 'Math') {
     console.log('Teaching Math');
   } else console.log('Teaching History');
 };
 
 teachClass('Math');
-teachClass('Hitsory');
+teachClass('Hitory');
